@@ -1,0 +1,10 @@
+@media (min-width: 768px) and (max-width: 1199px) {
+.cd-header-banner {height: 120px;}
+.cd-header-banner:hover {box-shadow: 0 0 15px rgba(0,0,0, .2);}
+
+.cd-header-banner a {
+	display: block;
+	width: 740px;
+	height: 120px;
+	background-image: url(http://fakeimg.pl/740x120/f5f5f5/555/?text=740x120&font=lobster);}
+}

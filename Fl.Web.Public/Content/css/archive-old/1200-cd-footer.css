@@ -1,0 +1,29 @@
+@media (min-width: 1200px) {
+.cd-copyright {height: 40px;}
+
+.cd-copyright > div{
+	color: #2c2c2c;
+	font-size: 14px;
+	line-height: 40px;}
+
+.cd-copyright > div:first-child {padding-left: 10px;}
+.cd-copyright > div:last-child {padding-right: 10px;}
+
+.cd-search:hover {box-shadow: 0 0 15px rgba(0,0,0, .35);}
+
+.cd-search-input {
+	border: none;
+	outline: none;
+	width: 230px;
+	height: 40px;
+	color: #3e3e3e;
+	font-size: 14px;
+	font-weight: 400;
+	padding-left: 40px;
+	background: url(../images/other/search-ico.png) no-repeat;}
+
+.cd-search-input::-webkit-input-placeholder {color:#757575; font-style: italic;}
+.cd-search-input::-moz-placeholder          {color:#757575; font-style: italic;}
+.cd-search-input:-moz-placeholder           {color:#757575; font-style: italic;}
+.cd-search-input:-ms-input-placeholder      {color:#757575; font-style: italic;}
+}
