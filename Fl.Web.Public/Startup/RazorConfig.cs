@@ -18,6 +18,9 @@ namespace Fl.Web.Public.Startup
         {
             yield return "Fl.Web.Public";
             yield return "Fl.Data.Core";
+            yield return "System.Globalization";
+            yield return "System.Collections.Generic";
+            yield return "System.Linq";
         }
 
         public bool AutoIncludeModelNamespace => true;

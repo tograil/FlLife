@@ -1,0 +1,17 @@
+﻿@using System.Globalization
+@using Fl.Web.Public.General
+@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<Fl.Data.Core.Domain.News.NewsPost>
+    
+<div class="cd-block-style cd-news-element">
+    <div class="hidden-xs pull-left cd-news-left">
+        <img src="/Content/images/news-image/news-image-1.jpg" height="220" width="260">
+    </div>
+    <div class="pull-left cd-news-right">
+        <div class="cd-news-title">@Model.Title</div>
+        <div class="cd-news-text-preview">@Model.Body</div>
+        <div class="cd-news-data">@Model.PostDate.ToString("D", new CultureInfo(Languages.GetLanguage(GeneralConstants.CurrentLanguage).CultureCode))</div>
+        <div class="cd-news-more-button">
+            <a href="#">@Text.Navigation.ReadMore</a>
+        </div>
+    </div>
+</div>

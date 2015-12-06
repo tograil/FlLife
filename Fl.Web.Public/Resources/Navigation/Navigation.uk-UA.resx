@@ -129,4 +129,7 @@
   <data name="PaymentInfo" xml:space="preserve">
     <value>Реквізити</value>
   </data>
+  <data name="ReadMore" xml:space="preserve">
+    <value>Читати далі...</value>
+  </data>
 </root>
