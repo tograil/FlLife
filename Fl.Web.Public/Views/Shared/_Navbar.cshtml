@@ -9,9 +9,9 @@
     </div>
     <div class="cd-multi-language hidden-xs">
         @* ReSharper disable once UseStringInterpolation *@
-        @foreach (var language in GeneralConstants.Languages)
+        @foreach (var language in Languages.GetAllActive())
         {
-             <a href="@(string.Format("/language/{0}/backurl/{1}", language.Key, Request.Url.BasePath))"><span class="pull-right @(language.Key == GeneralConstants.CurrentLanguage ? "cd-multi-language-active" : string.Empty)">@language.Key</span></a>
+             <a href="@(string.Format("/language/{0}/backurl/{1}", language.ShortName, Request.Url.BasePath))"><span class="pull-right @(language.ShortName == GeneralConstants.CurrentLanguage ? "cd-multi-language-active" : string.Empty)">@language.ShortName</span></a>
         }
         
   </div>
