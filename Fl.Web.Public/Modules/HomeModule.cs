@@ -16,15 +16,12 @@ namespace Fl.Web.Public.Modules
             _unitOfWork = unitOfWork;
 
             Get["/"] = Index;
-            Get["/page/{page:int}"] = Index;
             Get["/language/{language}/backurl/{backurl}"] = ChangeLanguage;
             Get["/language/{language}/backurl/"] = ChangeLanguage;
         }
 
         private dynamic Index(dynamic o)
         {
-            var news = _unitOfWork.NewsPosts.GetAllPostsByLanguageShortName(GeneralConstants.CurrentLanguage);
-
             return View["Index"];
         }
 
