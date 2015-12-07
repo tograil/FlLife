@@ -189,6 +189,7 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_Sidebar.cshtml" />
     <Content Include="Views\Shared\_RightNavbar.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -198,7 +199,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Identity\FlPasswordHasher.cs" />
     <Compile Include="Identity\FlUser.cs" />
+    <Compile Include="Identity\FlUserManager.cs" />
     <Compile Include="Identity\FlUserStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

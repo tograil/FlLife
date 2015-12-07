@@ -69,6 +69,8 @@
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Mapping\Localization\LanguageMap.cs" />
     <Compile Include="Mapping\News\NewsPostMap.cs" />
+    <Compile Include="Mapping\UserManagemnt\LoginMap.cs" />
+    <Compile Include="Mapping\UserManagemnt\UserMap.cs" />
     <Compile Include="Migrations\201512061455008_initial.cs" />
     <Compile Include="Migrations\201512061455008_initial.Designer.cs">
       <DependentUpon>201512061455008_initial.cs</DependentUpon>

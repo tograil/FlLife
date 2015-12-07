@@ -37,6 +37,10 @@ body {
         padding-left: 225px;
     }
 
+    #wrapper.logout {
+        padding-left: 0;
+    }
+
     #page-wrapper {
         padding: 10px;
     }

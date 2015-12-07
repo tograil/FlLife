@@ -13,5 +13,11 @@ namespace Fl.Admin.Controllers
         {
             return View();
         }
+
+        [AllowAnonymous]
+        public ActionResult ForgotPassword()
+        {
+            return View();
+        }
     }
 }
