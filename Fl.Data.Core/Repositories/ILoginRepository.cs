@@ -1,6 +1,6 @@
 ﻿using Fl.Data.Core.Domain.UserManagement;
 
-namespace Fl.Data.DB.Repositories
+namespace Fl.Data.Core.Repositories
 {
     public interface ILoginRepository : IRepository<Login>
     {

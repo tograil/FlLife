@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Fl.Data.Core.Domain.Localization;
 using Fl.Data.Core.Domain.News;
 
-namespace Fl.Data.DB.Repositories
+namespace Fl.Data.Core.Repositories
 {
     public interface INewsPostRepository : IRepository<NewsPost>
     {

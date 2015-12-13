@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
-using System.Text;
-using System.Threading.Tasks;
 using Fl.Data.Core.Domain.UserManagement;
+using Fl.Data.Core.Repositories;
 
 namespace Fl.Data.DB.Repositories
 {

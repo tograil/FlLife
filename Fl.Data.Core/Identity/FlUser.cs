@@ -1,7 +1,7 @@
 ﻿using Fl.Data.Core.Domain.UserManagement;
 using Microsoft.AspNet.Identity;
 
-namespace Fl.Admin.Identity
+namespace Fl.Data.Core.Identity
 {
     public class FlUser : IUser
     {

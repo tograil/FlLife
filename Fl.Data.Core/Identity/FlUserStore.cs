@@ -3,7 +3,7 @@ using Fl.Data.Core.Domain.UserManagement;
 using Fl.Data.DB;
 using Microsoft.AspNet.Identity;
 
-namespace Fl.Admin.Identity
+namespace Fl.Data.Core.Identity
 {
     public class FlUserStore : IUserStore<FlUser>
     {

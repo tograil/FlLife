@@ -3,6 +3,7 @@ using System.Data.Entity;
 using System.Linq;
 using Fl.Data.Core.Domain.Localization;
 using Fl.Data.Core.Domain.News;
+using Fl.Data.Core.Repositories;
 
 namespace Fl.Data.DB.Repositories
 {

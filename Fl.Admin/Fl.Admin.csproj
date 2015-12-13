@@ -199,10 +199,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Identity\FlPasswordHasher.cs" />
-    <Compile Include="Identity\FlUser.cs" />
-    <Compile Include="Identity\FlUserManager.cs" />
-    <Compile Include="Identity\FlUserStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

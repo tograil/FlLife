@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Fl.Data.Core.Domain.UserManagement;
-using Fl.Data.DB.Repositories;
+using Fl.Data.Core.Repositories;
 
 namespace Fl.Data.DB
 {

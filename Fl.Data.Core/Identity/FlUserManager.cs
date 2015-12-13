@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 
-namespace Fl.Admin.Identity
+namespace Fl.Data.Core.Identity
 {
     public class FlUserManager : UserManager<FlUser>
     {
