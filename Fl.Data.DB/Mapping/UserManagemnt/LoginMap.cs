@@ -12,7 +12,7 @@ namespace Fl.Data.DB.Mapping.UserManagemnt
             HasKey(t => t.Email);
             Property(t => t.Name).HasMaxLength(30).IsRequired();
             Property(t => t.Email).HasMaxLength(30).IsRequired();
-            Property(t => t.Password).HasMaxLength(30).IsRequired();
+            Property(t => t.Password).HasMaxLength(130).IsRequired();
             Property(t => t.Salt).HasMaxLength(30).IsRequired();
 
             Property(t => t.UserId).IsRequired();

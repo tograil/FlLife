@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Fl.Data.Core.Domain.UserManagement;
+﻿using Fl.Data.Core.Domain.UserManagement;
 using Fl.Data.Core.Repositories;
 using Fl.Data.DB.Repositories;
 
@@ -28,6 +23,12 @@ namespace Fl.Data.DB
         public INewsPostRepository NewsPosts { get; set; }
         public ILoginRepository Logins { get; set; }
         public IRepository<User> Users { get; set; }
+
+        public static UnitOfWork Create()
+        {
+            return new UnitOfWork(new FlDataContext());
+        }
+
 
         public int Commit()
         {

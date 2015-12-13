@@ -10,6 +10,6 @@
         public string Salt { get; set; }
 
         public int UserId { get; set; }
-        public UserManagement.User User { get; set; }
+        public User User { get; set; }
     }
 }

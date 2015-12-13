@@ -1,28 +1,30 @@
-﻿
+﻿@model Fl.Admin.Models.LoginViewModel
 @{
     ViewBag.Title = "Login";
 }
 
 <div id="loginarea" >
     <div class="col-md-2 col-md-offset-5 col-sm-3 col-sm-offset-4">
-        <form>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
             <div class="row">
                 <div class="form-group">
-                    <label for="loginPlaceholder">Имя пользователя</label>
-                    <input id="loginPlaceholder" class="form-control" placeholder="Введите имя пользователя или адрес электронной почты">
+                    @Html.LabelFor(model => model.Email, "Имя пользователя")
+                    @Html.TextBoxFor(model => model.Email, new { @class="form-control", placeholder = "Введите имя пользователя или адрес электронной почты" })
                 </div>
             </div>
             <div class="row">
                 <div class="form-group">
-                    <label for="passwordPlaceholder">Пароль</label>
-                    <input id="passwordPlaceholder" class="form-control" placeholder="Введите пароль здесь" type="password">
+                    @Html.LabelFor(model => model.Password, "Пароль")
+                    @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "Введите пароль здесь" })
                 </div>
             </div>
             <div class="row text-right">
                 @Html.ActionLink("Забыли пароль?", "ForgotPassword")&nbsp;
                 <button class="btn btn-default" type="submit">Войти</button>
             </div>
-        </form>
+        }
     </div>
 </div>
 

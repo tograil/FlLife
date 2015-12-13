@@ -1,4 +1,6 @@
-﻿using Fl.Data.Core.Domain.UserManagement;
+﻿using System.Security.Claims;
+using System.Threading.Tasks;
+using Fl.Data.Core.Domain.UserManagement;
 using Microsoft.AspNet.Identity;
 
 namespace Fl.Data.Core.Identity
@@ -23,5 +25,13 @@ namespace Fl.Data.Core.Identity
         }
 
         public Login Login { get; set; }
+
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<FlUser> manager)
+        {
+            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
+            var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
+            // Add custom user claims here
+            return userIdentity;
+        }
     }
 }

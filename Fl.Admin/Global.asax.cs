@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Fl.Admin.Factories;
 
 namespace Fl.Admin
 {
@@ -13,6 +14,10 @@ namespace Fl.Admin
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            //Initialize IoC container/Unity
+            Bootstrapper.Initialise();
+            //Register our custom controller factory
+            ControllerBuilder.Current.SetControllerFactory(typeof(ControllerFactory));
         }
     }
 }

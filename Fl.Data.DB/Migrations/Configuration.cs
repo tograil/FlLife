@@ -5,6 +5,7 @@ using System.Text;
 using Fl.Data.Core.Domain.Localization;
 using Fl.Data.Core.Domain.News;
 using Fl.Data.Core.Domain.UserManagement;
+using Fl.Data.Core.Identity;
 
 namespace Fl.Data.DB.Migrations
 {
@@ -40,14 +41,17 @@ namespace Fl.Data.DB.Migrations
                 UserId = 1,
                 User = new User
                 {
+                    Id = 1,
                     FirstName = "Admin",
                     LastName = "Admin"
                 }
             };
 
-            context.Users.Add(login.User);
+            login.Password = new FlPasswordHasher(login.Salt).HashPassword("Admin");
 
-            context.Logins.Add(login);
+            context.Users.AddOrUpdate(login.User);
+
+            context.Logins.AddOrUpdate(login);
 
 
         }

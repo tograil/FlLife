@@ -20,9 +20,9 @@ namespace Fl.Data.Core.Identity
 
         public override PasswordVerificationResult VerifyHashedPassword(string hashedPassword, string providedPassword)
         {
-            providedPassword = HashPassword(providedPassword);
+            providedPassword = string.Concat(providedPassword, _salt);
 
-            return hashedPassword.Equals(providedPassword) ? PasswordVerificationResult.Success : PasswordVerificationResult.Failed;
+            return base.VerifyHashedPassword(hashedPassword, providedPassword);
         }
     }
 }
