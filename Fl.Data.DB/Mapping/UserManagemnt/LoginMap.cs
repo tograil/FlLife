@@ -14,6 +14,10 @@ namespace Fl.Data.DB.Mapping.UserManagemnt
             Property(t => t.Email).HasMaxLength(30).IsRequired();
             Property(t => t.Password).HasMaxLength(30).IsRequired();
             Property(t => t.Salt).HasMaxLength(30).IsRequired();
+
+            Property(t => t.UserId).IsRequired();
+
+            HasRequired(t => t.User).WithMany().HasForeignKey(t => t.UserId).WillCascadeOnDelete(true);
         }
     }
 }

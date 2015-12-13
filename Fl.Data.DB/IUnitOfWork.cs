@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Fl.Data.Core.Domain.UserManagement;
 using Fl.Data.DB.Repositories;
 
 namespace Fl.Data.DB
@@ -11,6 +12,8 @@ namespace Fl.Data.DB
     {
         ILanguageRepository Languages { get; set; }
         INewsPostRepository NewsPosts { get; set; }
+        ILoginRepository Logins { get; set; }
+        IRepository<User> Users { get; set; }
 
         int Commit();
     }

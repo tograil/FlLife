@@ -1,42 +1,72 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Web;
+﻿using System.Threading.Tasks;
+using Fl.Data.Core.Domain.UserManagement;
+using Fl.Data.DB;
 using Microsoft.AspNet.Identity;
 
 namespace Fl.Admin.Identity
 {
     public class FlUserStore : IUserStore<FlUser>
     {
+        private readonly IUnitOfWork _repository;
+
+        public FlUserStore(IUnitOfWork repository)
+        {
+            _repository = repository;
+        }
+
         public void Dispose()
         {
-            throw new NotImplementedException();
+            
         }
 
         public Task CreateAsync(FlUser user)
         {
-            throw new NotImplementedException();
+            return Task.Factory.StartNew(() =>
+            {
+                _repository.Users.Add(user.Login.User);
+                _repository.Logins.Add(user.Login);
+                _repository.Commit();
+
+            });
         }
 
         public Task UpdateAsync(FlUser user)
         {
-            throw new NotImplementedException();
+            return CreateAsync(user);
         }
 
         public Task DeleteAsync(FlUser user)
         {
-            throw new NotImplementedException();
+            var login = GetLoginUser(user.UserName);
+
+            return Task.Factory.StartNew(() =>
+            {
+                _repository.Logins.Remove(login);
+                _repository.Commit();
+            });
         }
 
         public Task<FlUser> FindByIdAsync(string userId)
         {
-            throw new NotImplementedException();
+            return FindByNameAsync(userId);
         }
 
         public Task<FlUser> FindByNameAsync(string userName)
         {
-            throw new NotImplementedException();
+
+            var login = GetLoginUser(userName);
+
+            return Task<FlUser>.Factory.StartNew(() => new FlUser
+            {
+                Id = login.Name,
+                UserName = login.Name,
+                Login = login
+            });
         }
+
+        private Login GetLoginUser(string name)
+        {
+            return _repository.Logins.GetLoginByName(name);
+        } 
     }
 }

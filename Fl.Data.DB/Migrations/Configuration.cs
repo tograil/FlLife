@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Fl.Data.Core.Domain.Localization;
 using Fl.Data.Core.Domain.News;
+using Fl.Data.Core.Domain.UserManagement;
 
 namespace Fl.Data.DB.Migrations
 {
@@ -29,6 +30,26 @@ namespace Fl.Data.DB.Migrations
             context.Languages.AddOrUpdate(languages);
 
             NewsSeed(context, languages);
+
+            var login = new Login
+            {
+                Name = "Admin",
+                Password = "Admin",
+                Email = "admin@admin.com",
+                Salt = "Q1ghj",
+                UserId = 1,
+                User = new User
+                {
+                    FirstName = "Admin",
+                    LastName = "Admin"
+                }
+            };
+
+            context.Users.Add(login.User);
+
+            context.Logins.Add(login);
+
+
         }
 
         private static void NewsSeed(FlDataContext context, ICollection<Language> languages)

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Fl.Data.Core.Domain.Localization;
 using Fl.Data.Core.Domain.News;
+using Fl.Data.Core.Domain.UserManagement;
 
 namespace Fl.Data.DB
 {
@@ -20,6 +21,8 @@ namespace Fl.Data.DB
 
         public DbSet<Language> Languages { get; set; }
         public DbSet<NewsPost> NewsPosts { get; set; }
+        public DbSet<Login> Logins { get; set; }
+        public DbSet<User> Users { get; set; } 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
