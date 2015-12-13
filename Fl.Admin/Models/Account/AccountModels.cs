@@ -1,15 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Fl.Admin.Models
+namespace Fl.Admin.Models.Account
 {
-    public class AccountModels
-    {
-    }
-
     public class LoginViewModel
     {
         [Required]

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Linq.Expressions;
 using Fl.Data.Core.Repositories;
@@ -31,9 +32,9 @@ namespace Fl.Data.DB.Repositories
             return Context.Set<TEntity>().Where(predicate);
         }
 
-        public void Add(TEntity item)
+        public void AddOrUpdate(TEntity item)
         {
-            Context.Set<TEntity>().Add(item);
+            Context.Set<TEntity>().AddOrUpdate(item);
         }
 
         public void AddRange(IEnumerable<TEntity> items)

@@ -20,8 +20,6 @@ namespace Fl.Admin.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var values = _unitOfWork;
-
             return View();
         }
     }

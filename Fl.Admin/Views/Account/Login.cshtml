@@ -1,8 +1,13 @@
-﻿@model Fl.Admin.Models.LoginViewModel
+﻿@model Fl.Admin.Models.Account.LoginViewModel
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "Вход на сайт";
 }
-
+<ol class="breadcrumb">
+    <li class="active">
+        <i class="fa fa-edit"></i>
+        @ViewBag.Title
+    </li>
+</ol>
 <div id="loginarea" >
     <div class="col-md-2 col-md-offset-5 col-sm-3 col-sm-offset-4">
         @using (Html.BeginForm())

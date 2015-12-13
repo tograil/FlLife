@@ -24,8 +24,8 @@ namespace Fl.Data.Core.Identity
         {
             return Task.Factory.StartNew(() =>
             {
-                _repository.Users.Add(user.Login.User);
-                _repository.Logins.Add(user.Login);
+                _repository.Users.AddOrUpdate(user.Login.User);
+                _repository.Logins.AddOrUpdate(user.Login);
                 _repository.Commit();
 
             });

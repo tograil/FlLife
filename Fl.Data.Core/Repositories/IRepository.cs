@@ -10,7 +10,7 @@ namespace Fl.Data.Core.Repositories
         IEnumerable<TEntity> GetAll();
         IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
 
-        void Add(TEntity item);
+        void AddOrUpdate(TEntity item);
         void AddRange(IEnumerable<TEntity> items);
 
         void Remove(TEntity item);

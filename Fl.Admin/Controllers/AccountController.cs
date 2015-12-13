@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Fl.Admin.Models;
+using Fl.Admin.Models.Account;
+using Fl.Data.Core.Domain.UserManagement;
 using Fl.Data.Core.Identity;
 using Fl.Data.DB;
 using Microsoft.AspNet.Identity;
@@ -91,6 +90,36 @@ namespace Fl.Admin.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult UserProfile()
+        {
+            var login = _unitOfWork.Logins.GetLoginByName(User.Identity.GetUserId());
+
+            return View("Profile", login);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> UserProfile(Login newLogin)
+        {
+
+            var login = _unitOfWork.Logins.GetLoginByName(User.Identity.GetUserId());
+
+            login.User.FirstName = newLogin.User.FirstName;
+            login.User.LastName = newLogin.User.LastName;
+
+            _unitOfWork.Logins.AddOrUpdate(login);
+            _unitOfWork.Users.AddOrUpdate(login.User);
+
+            _unitOfWork.Commit();
+
+            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+
+            var usr = await UserManager.FindByNameAsync(User.Identity.GetUserId());
+
+            await SignInManager.SignInAsync(usr, true, false);
+
             return RedirectToAction("Index", "Home");
         }
 

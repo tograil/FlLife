@@ -1,0 +1,34 @@
+﻿@model Fl.Data.Core.Domain.UserManagement.Login
+@{
+    ViewBag.Title = "Личный кабинет";
+}
+<ol class="breadcrumb">
+    <li>
+        <i class="fa fa-dashboard"></i>
+        <a href="@Url.Action("Index", "Home")">Домашняя страница</a>
+    </li>
+    <li class="active">
+        <i class="fa fa-edit"></i>
+        @ViewBag.Title
+    </li>
+</ol>
+<div id="loginarea">
+    <div class="row">
+        <div class="col-lg-6">
+            @using (Html.BeginForm())
+            {
+                <div class="form-group">
+                        @Html.LabelFor(model => model.User.FirstName)
+                        @Html.TextBoxFor(model => model.User.FirstName, new {@class = "form-control"})
+                </div>
+                <div class="form-group">
+                        @Html.LabelFor(model => model.User.LastName)
+                        @Html.TextBoxFor(model => model.User.LastName, new {@class = "form-control"})
+                </div>
+                <div class="form-group text-right">
+                        <button class="btn btn-default" type="submit">Обновить</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>

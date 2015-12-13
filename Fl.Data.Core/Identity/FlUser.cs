@@ -11,16 +11,9 @@ namespace Fl.Data.Core.Identity
 
         public string UserName
         {
-            get { return Login.Name; }
+            get { return string.Join(" ", Login.User.FirstName, Login.User.LastName); }
             set
             {
-                if (Login == null)
-                {
-                    Login = new Login
-                    {
-                        Name = value
-                    };
-                }
             }
         }
 
@@ -28,9 +21,9 @@ namespace Fl.Data.Core.Identity
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<FlUser> manager)
         {
-            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
+            
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
-            // Add custom user claims here
+            
             return userIdentity;
         }
     }
