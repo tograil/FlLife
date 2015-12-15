@@ -107,8 +107,6 @@ namespace Fl.Data.Core.Identity
             }
             if (shouldLockout && UserManager.SupportsUserLockout)
             {
-                // If lockout is requested, increment access failed count
-                // which might lock out the user
                 await UserManager.AccessFailedAsync(user.Id).WithCurrentCulture();
                 if (await UserManager.IsLockedOutAsync(user.Id).WithCurrentCulture())
                 {
