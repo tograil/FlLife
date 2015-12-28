@@ -37,7 +37,6 @@ namespace Fl.Data.DB.Migrations
                 Name = "Admin",
                 Password = "Admin",
                 Email = "admin@admin.com",
-                Salt = "Q1ghj",
                 UserId = 1,
                 User = new User
                 {
@@ -47,7 +46,7 @@ namespace Fl.Data.DB.Migrations
                 }
             };
 
-            login.Password = new FlPasswordHasher(login.Salt).HashPassword("Admin");
+            login.Password = new FlPasswordHasher().HashPassword("Admin");
 
             context.Users.AddOrUpdate(login.User);
 

@@ -1,28 +1,35 @@
-﻿using System;
-using System.Data.Entity.Utilities;
+﻿using System.Data.Entity.Utilities;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Fl.Data.Core.Domain.UserManagement;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 
 namespace Fl.Data.Core.Identity
 {
-    public class FlSignInManager : SignInManager<FlUser, string>
+    public class FlSignInManager : SignInManager<Login, string>
     {
-        public FlSignInManager(UserManager<FlUser, string> userManager, IAuthenticationManager authenticationManager) : base(userManager, authenticationManager)
+        public FlSignInManager(UserManager<Login, string> userManager, IAuthenticationManager authenticationManager) : base(userManager, authenticationManager)
         {
         }
 
-        public override Task<ClaimsIdentity> CreateUserIdentityAsync(FlUser user)
+        public override Task<ClaimsIdentity> CreateUserIdentityAsync(Login user)
         {
-            return user.GenerateUserIdentityAsync((FlUserManager) UserManager);
+            return GenerateUserIdentityAsync(user, UserManager);
         }
 
+        private async Task<ClaimsIdentity> GenerateUserIdentityAsync(Login user, UserManager<Login, string> manager)
+        {
+
+            var userIdentity = await manager.CreateIdentityAsync(user, DefaultAuthenticationTypes.ApplicationCookie);
+
+            return userIdentity;
+        }
         public FlUserManager FlUserManager => UserManager as FlUserManager;
 
         public override async Task SignInAsync(
-        FlUser user,
+        Login user,
         bool isPersistent,
         bool rememberBrowser)
         {
@@ -51,9 +58,9 @@ namespace Fl.Data.Core.Identity
             }
         }
 
-        private async Task<SignInStatus> SignInOrTwoFactor(FlUser user, bool isPersistent)
+        private async Task<SignInStatus> SignInOrTwoFactor(Login user, bool isPersistent)
         {
-            var id = Convert.ToString(user.Id);
+            var id = user.Id;
 
             if (UserManager.SupportsUserTwoFactor
                 && await UserManager.GetTwoFactorEnabledAsync(user.Id)

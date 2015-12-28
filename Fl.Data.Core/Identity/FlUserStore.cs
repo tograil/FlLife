@@ -6,7 +6,7 @@ using Microsoft.AspNet.Identity;
 
 namespace Fl.Data.Core.Identity
 {
-    public class FlUserStore : IUserStore<FlUser>, IUserLockoutStore<FlUser, string>, IUserPasswordStore<FlUser>
+    public class FlUserStore : IUserStore<Login>, IUserLockoutStore<Login, string>, IUserPasswordStore<Login>
     {
         private readonly IUnitOfWork _repository;
 
@@ -20,26 +20,24 @@ namespace Fl.Data.Core.Identity
             
         }
 
-        public Task CreateAsync(FlUser user)
+        public Task CreateAsync(Login login)
         {
             return Task.Factory.StartNew(() =>
             {
-                _repository.Users.AddOrUpdate(user.Login.User);
-                _repository.Logins.AddOrUpdate(user.Login);
+                _repository.Users.AddOrUpdate(login.User);
+                _repository.Logins.AddOrUpdate(login);
                 _repository.Commit();
 
             });
         }
 
-        public Task UpdateAsync(FlUser user)
+        public Task UpdateAsync(Login login)
         {
-            return CreateAsync(user);
+            return CreateAsync(login);
         }
 
-        public Task DeleteAsync(FlUser user)
+        public Task DeleteAsync(Login login)
         {
-            var login = GetLoginUser(user.UserName);
-
             return Task.Factory.StartNew(() =>
             {
                 _repository.Logins.Remove(login);
@@ -47,22 +45,17 @@ namespace Fl.Data.Core.Identity
             });
         }
 
-        public Task<FlUser> FindByIdAsync(string userId)
+        public Task<Login> FindByIdAsync(string userId)
         {
             return FindByNameAsync(userId);
         }
 
-        public Task<FlUser> FindByNameAsync(string userName)
+        public Task<Login> FindByNameAsync(string userName)
         {
 
             var login = GetLoginUser(userName);
 
-            return Task<FlUser>.Factory.StartNew(() => new FlUser
-            {
-                Id = login.Name,
-                UserName = login.Name,
-                Login = login
-            });
+            return Task<Login>.Factory.StartNew(() => login);
         }
 
         private Login GetLoginUser(string name)
@@ -70,37 +63,37 @@ namespace Fl.Data.Core.Identity
             return _repository.Logins.GetLoginByName(name);
         }
 
-        public Task<int> GetAccessFailedCountAsync(FlUser user)
+        public Task<int> GetAccessFailedCountAsync(Login login)
         {
             return Task.Factory.StartNew(() => 0);
         }
 
-        public Task<bool> GetLockoutEnabledAsync(FlUser user)
+        public Task<bool> GetLockoutEnabledAsync(Login login)
         {
-            return Task.Factory.StartNew<bool>(() => false);
+            return Task.Factory.StartNew(() => false);
         }
 
-        public Task<DateTimeOffset> GetLockoutEndDateAsync(FlUser user)
+        public Task<DateTimeOffset> GetLockoutEndDateAsync(Login login)
         {
             throw new NotImplementedException();
         }
 
-        public Task<int> IncrementAccessFailedCountAsync(FlUser user)
+        public Task<int> IncrementAccessFailedCountAsync(Login login)
         {
             return Task.Factory.StartNew(() => 0);
         }
 
-        public Task ResetAccessFailedCountAsync(FlUser user)
+        public Task ResetAccessFailedCountAsync(Login login)
         {
             return Task.Factory.StartNew(() => 0);
         }
 
-        public Task SetLockoutEnabledAsync(FlUser user, bool enabled)
+        public Task SetLockoutEnabledAsync(Login login, bool enabled)
         {
             throw new NotImplementedException();
         }
 
-        public Task SetLockoutEndDateAsync(FlUser user, DateTimeOffset lockoutEnd)
+        public Task SetLockoutEndDateAsync(Login login, DateTimeOffset lockoutEnd)
         {
             throw new NotImplementedException();
         }
@@ -108,17 +101,17 @@ namespace Fl.Data.Core.Identity
         #region IUserPasswordStore
 
 
-        public Task SetPasswordHashAsync(FlUser user, string passwordHash)
+        public Task SetPasswordHashAsync(Login login, string passwordHash)
         {
             return Task.Factory.StartNew(() => string.Empty);
         }
 
-        public Task<string> GetPasswordHashAsync(FlUser user)
+        public Task<string> GetPasswordHashAsync(Login login)
         {
-            return Task.Factory.StartNew(() => user.Login.Password);
+            return Task.Factory.StartNew(() => login.Password);
         }
 
-        public Task<bool> HasPasswordAsync(FlUser user)
+        public Task<bool> HasPasswordAsync(Login login)
         {
             return Task.Factory.StartNew(() => true);
         }

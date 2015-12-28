@@ -88,7 +88,6 @@
     <Compile Include="Domain\UserManagement\User.cs" />
     <Compile Include="Identity\FlPasswordHasher.cs" />
     <Compile Include="Identity\FlSignInManager.cs" />
-    <Compile Include="Identity\FlUser.cs" />
     <Compile Include="Identity\FlUserManager.cs" />
     <Compile Include="Identity\FlUserStore.cs" />
     <Compile Include="Repositories\ILanguageRepository.cs" />
