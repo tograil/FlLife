@@ -19,7 +19,7 @@ namespace Fl.Data.Core.Domain.UserManagement
         {
             get
             {
-              return Name;  
+              return User != null ? string.Join(" ", User.FirstName, User.LastName) : Name;
             }
 
             set { }

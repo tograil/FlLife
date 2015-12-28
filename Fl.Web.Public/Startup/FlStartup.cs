@@ -13,8 +13,6 @@ namespace Fl.Web.Public.Startup
             var httpConfiguration = new HttpConfiguration();
             WebApiConfig.Register(httpConfiguration);
             app.UseWebApi(httpConfiguration);
-
-            app.UseNancy();
         }
     }
 }

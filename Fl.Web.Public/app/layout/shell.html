@@ -1,0 +1,57 @@
+﻿<div class="container">
+
+    <!-- header banner start -->
+    <div class="row cd-block-margin-top">
+        <div class="col-lg-50 col-xs-50 cd-block-style cd-header-banner">
+            <a href="#"></a>
+        </div>
+    </div>
+    <!-- header banner end -->
+    <!-- navigation start -->
+    <div class="row cd-block-margin-top">
+        <div data-ng-include="'app/layout/navbar.html'"></div>  
+        <div class="col-lg-12 col-lg-offset-1 visible-lg cd-social">
+            <a class="pull-left" href="#"><div class="cd-social-btn-1"></div></a>
+            <a class="pull-left" href="#"><div class="cd-social-btn-2"></div></a>
+            <a class="pull-left" href="#"><div class="cd-social-btn-3"></div></a>
+            <a class="pull-left" href="#"><div class="cd-social-btn-4"></div></a>
+            <a class="pull-left" href="#"><div class="cd-social-btn-5"></div></a>
+        </div>
+    </div>
+    <!-- navigation end -->
+    <!-- content start -->
+    <div class="row cd-block-margin-top">
+
+        <div class="col-md-50 col-sm-50 hidden-lg cd-sidebar" ng-include="'app/layout/sidebar_mobile.html'"></div>
+
+        <div ng-view class="col-lg-37 col-md-50 col-sm-50"></div>
+
+        <div ng-include="'app/layout/sidebar.html'" class="col-lg-12 col-lg-offset-1 visible-lg cd-sidebar"></div>
+    </div>
+    <!-- content end -->
+    <!-- footer start -->
+    <div class="row cd-block-margin-top cd-block-margin-bot">
+        <div class="col-lg-37 col-md-29 col-sm-29 col-xs-50 cd-block-style cd-copyright">
+            <div class="pull-left">Центр помощи детям “Цветы жизни”</div>
+            <div class="pull-right">2015 - 2016</div>
+        </div>
+        <div class="col-md-19 col-md-offset-2 col-sm-19 col-sm-offset-2 col-xs-50 hidden-lg cd-social">
+            <a class="pull-left" href="#"><div class="cd-social-btn-1"></div></a>
+            <a class="pull-left" href="#"><div class="cd-social-btn-2"></div></a>
+            <a class="pull-left" href="#"><div class="cd-social-btn-3"></div></a>
+            <a class="pull-left" href="#"><div class="cd-social-btn-4"></div></a>
+            <a class="pull-left" href="#"><div class="cd-social-btn-5"></div></a>
+            <div class="visible-xs cd-multi-language">
+                <a href="#"><span class="pull-right cd-multi-language-active">RU</span></a>
+                <a href="#"><span class="pull-right">UK</span></a>
+                <a href="#"><span class="pull-right">EN</span></a>
+            </div>
+        </div>
+        <div class="col-lg-12 col-lg-offset-1 visible-lg">
+            <div class="form-group cd-block-style cd-search">
+                <input type="search" class="cd-search-input" placeholder="поиск...">
+            </div>
+        </div>
+    </div>
+    <!-- footer end -->
+</div>

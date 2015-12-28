@@ -1,0 +1,10 @@
+﻿<div class="col-lg-37 cd-block-style cd-navbar" ng-controller="navbar as vm">
+    <div class="cd-navbar-btn">
+        <a  ng-repeat="rt in vm.routes" href="#{{rt.url}}"><span class="pull-left" ng-class="vm.isCurrent(rt)">{{rt.config.settings.content}}</span></a>
+    </div>
+    <div class="cd-multi-language hidden-xs">
+        <a href="#"><span class="pull-right cd-multi-language-active">RU</span></a>
+        <a href="#"><span class="pull-right">UK</span></a>
+        <a href="#"><span class="pull-right">EN</span></a>
+    </div>
+</div>

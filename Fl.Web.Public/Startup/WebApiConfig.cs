@@ -21,6 +21,12 @@ namespace Fl.Web.Public.Startup
                 routeTemplate: "news",
                 defaults: new { controller = "News", action = "Get" }
                 );
+
+            config.Routes.MapHttpRoute(
+                name: "AllContent",
+                routeTemplate: "content",
+                defaults: new { controller = "Content", action = "Get" }
+                );
         }
     }
 }
