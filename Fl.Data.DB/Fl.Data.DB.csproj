@@ -90,6 +90,10 @@
     <Compile Include="Migrations\201512281139537_IdentityChange.Designer.cs">
       <DependentUpon>201512281139537_IdentityChange.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201512291503303_Added_News_Type.cs" />
+    <Compile Include="Migrations\201512291503303_Added_News_Type.Designer.cs">
+      <DependentUpon>201512291503303_Added_News_Type.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\LanguageRepository.cs" />
@@ -120,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201512281139537_IdentityChange.resx">
       <DependentUpon>201512281139537_IdentityChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512291503303_Added_News_Type.resx">
+      <DependentUpon>201512291503303_Added_News_Type.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

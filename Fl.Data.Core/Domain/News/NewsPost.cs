@@ -11,6 +11,8 @@ namespace Fl.Data.Core.Domain.News
         public string Title { get; set; }
         public string Body { get; set; }
 
+        public Constants.NewsType NewsType { get; set; }
+
         public DateTime PostDate { get; set; } = DateTime.Now;
 
         public int LanguageId { get; set; }

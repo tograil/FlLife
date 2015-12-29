@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using Fl.Data.Core;
 using Fl.Data.Core.Domain.Localization;
 using Fl.Data.Core.Domain.News;
 using Fl.Data.Core.Domain.UserManagement;
@@ -69,7 +70,8 @@ namespace Fl.Data.DB.Migrations
                             sometimes you can’t tell when you are burned out on a client, or on a job, and may think you are just temporarily tired, overwhelmed, or stressed. It’s important to regularly monitor and assess your emotional state, because you won’t be an effective professional when you are experiencing burnout and you also won’t draw satisfaction and joy from your work. Ideally, management / supervisors will be monitoring staff for signs and indications of burnout, and / or creating systems intended to minimize burnout(such as small caseloads).However, I recommend assessing yourself on a regular basis to be sure you aren’t experiencing burnout.
                             I have learned over the years to monitor my own emotional state to make sure I am far away from reaching burnout levels.I know when to decline clients or refer out, I know when to seek out help or feedback from my colleagues, and I know how to maintain a healthy life / work balance…..but I didn’t start out in this field knowing all of that.",
                     LanguageId = languages.Single(l => l.ShortName == "EN").Id,
-                    Language = languages.Single(l => l.ShortName == "EN")
+                    Language = languages.Single(l => l.ShortName == "EN"),
+                    NewsType = Constants.NewsType.News
                 },
                 new NewsPost
                 {
@@ -81,7 +83,8 @@ namespace Fl.Data.DB.Migrations
                             sometimes you can’t tell when you are burned out on a client, or on a job, and may think you are just temporarily tired, overwhelmed, or stressed. It’s important to regularly monitor and assess your emotional state, because you won’t be an effective professional when you are experiencing burnout and you also won’t draw satisfaction and joy from your work. Ideally, management / supervisors will be monitoring staff for signs and indications of burnout, and / or creating systems intended to minimize burnout(such as small caseloads).However, I recommend assessing yourself on a regular basis to be sure you aren’t experiencing burnout.
                             I have learned over the years to monitor my own emotional state to make sure I am far away from reaching burnout levels.I know when to decline clients or refer out, I know when to seek out help or feedback from my colleagues, and I know how to maintain a healthy life / work balance…..but I didn’t start out in this field knowing all of that.",
                     LanguageId = languages.Single(l => l.ShortName == "RU").Id,
-                    Language = languages.Single(l => l.ShortName == "RU")
+                    Language = languages.Single(l => l.ShortName == "RU"),
+                    NewsType = Constants.NewsType.News
                 },
                 new NewsPost
                 {
@@ -93,7 +96,8 @@ namespace Fl.Data.DB.Migrations
                             sometimes you can’t tell when you are burned out on a client, or on a job, and may think you are just temporarily tired, overwhelmed, or stressed. It’s important to regularly monitor and assess your emotional state, because you won’t be an effective professional when you are experiencing burnout and you also won’t draw satisfaction and joy from your work. Ideally, management / supervisors will be monitoring staff for signs and indications of burnout, and / or creating systems intended to minimize burnout(such as small caseloads).However, I recommend assessing yourself on a regular basis to be sure you aren’t experiencing burnout.
                             I have learned over the years to monitor my own emotional state to make sure I am far away from reaching burnout levels.I know when to decline clients or refer out, I know when to seek out help or feedback from my colleagues, and I know how to maintain a healthy life / work balance…..but I didn’t start out in this field knowing all of that.",
                     LanguageId = languages.Single(l => l.ShortName == "UK").Id,
-                    Language = languages.Single(l => l.ShortName == "UK")
+                    Language = languages.Single(l => l.ShortName == "UK"),
+                    NewsType = Constants.NewsType.News
                 }
             };
 

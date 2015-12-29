@@ -16,6 +16,7 @@ namespace Fl.Data.DB.Mapping.News
             HasKey(t => t.Id);
             Property(t => t.Title).HasMaxLength(120).IsUnicode(true).IsRequired();
             Property(t => t.Body).IsRequired().IsMaxLength().IsUnicode(true);
+            Property(t => t.NewsType).IsRequired();
             Property(t => t.PostDate).IsRequired();
 
             HasRequired(t => t.Language).WithMany().HasForeignKey(t => t.LanguageId).WillCascadeOnDelete(true);

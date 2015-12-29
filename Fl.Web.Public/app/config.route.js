@@ -1,8 +1,6 @@
 ﻿(function(app) {
     'use strict';
 
-    angular.module('app');
-
     app.root.constant('routes', getRoutes());
 
     // Configure the routes and route resolvers
@@ -29,7 +27,7 @@
                 url: '/about',
                 config: {
                     templateUrl: 'app/about/about.html',
-                    title: 'about',
+                    title: 'About',
                     settings: {
                         nav: 1,
                         content: 'О Нас',
@@ -41,7 +39,7 @@
                 url: '/autism',
                 config: {
                     templateUrl: 'app/autism/autism.html',
-                    title: 'autism',
+                    title: 'Autism',
                     settings: {
                         nav: 2,
                         content: 'Аутизм',
@@ -53,20 +51,19 @@
                 url: '/news',
                 config: {
                     templateUrl: 'app/news/news.html',
-                    title: 'news',
+                    title: 'News',
                     settings: {
                         nav: 3,
                         content: 'Новости',
                         type: 'topbar'
-                    },
-                    controller: 'news'
+                    }
                 }
             },
             {
-                url: '/requisites',
+                url: '/donate',
                 config: {
                     templateUrl: 'app/payment/payment.html',
-                    title: 'requisites',
+                    title: 'Donate',
                     settings: {
                         nav: 4,
                         content: 'Помочь нам',
@@ -78,7 +75,7 @@
                 url: '/irc',
                 config: {
                     templateUrl: 'app/payment/irc.html',
-                    title: 'irc',
+                    title: 'Irc',
                     settings: {
                         nav: 1,
                         content: 'ИРЦ',
@@ -91,7 +88,7 @@
                 url: '/school',
                 config: {
                     templateUrl: 'app/payment/payment.html',
-                    title: 'school',
+                    title: 'School',
                     settings: {
                         nav: 2,
                         content: 'Школа',
@@ -104,7 +101,7 @@
                 url: '/diagnostics',
                 config: {
                     templateUrl: 'app/payment/payment.html',
-                    title: 'diagnostics',
+                    title: 'Diagnostics',
                     settings: {
                         nav: 3,
                         content: 'Диагностика',
@@ -117,7 +114,7 @@
                 url: '/parents',
                 config: {
                     templateUrl: 'app/payment/payment.html',
-                    title: 'parents',
+                    title: 'Parents',
                     settings: {
                         nav: 4,
                         content: 'Родителям',

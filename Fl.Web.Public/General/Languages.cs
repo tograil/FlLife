@@ -5,24 +5,29 @@ using Fl.Data.DB;
 
 namespace Fl.Web.Public.General
 {
-    public abstract class Languages
+    public class Languages : ILanguages
     {
-        protected static IUnitOfWork UnitOfWork { get; set; }
+        public Languages(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+        }
 
-        protected static ICollection<Language> LanguagesList = null;
+        private readonly IUnitOfWork _unitOfWork;
 
-        protected static object Locker = new object();
+        protected ICollection<Language> LanguagesList = null;
 
-        public static Language GetLanguage(string code)
+        protected object Locker = new object();
+
+        public Language GetLanguage(string code)
         {
             return GetAllActive().Single(language => language.ShortName.Equals(code));
         }
 
-        public static ICollection<Language> GetAllActive()
+        public ICollection<Language> GetAllActive()
         {
             lock (Locker)
             {
-                return LanguagesList ?? (LanguagesList = UnitOfWork.Languages.GetAllAciveOrdered().ToArray());
+                return LanguagesList ?? (LanguagesList = _unitOfWork.Languages.GetAllAciveOrdered().ToArray());
             } 
         }
     }

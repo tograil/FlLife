@@ -181,6 +181,7 @@
     <Content Include="app\app.js" />
     <Content Include="app\autism\autism.html" />
     <Content Include="app\config.js" />
+    <Content Include="app\config.localization.js" />
     <Content Include="app\config.route.js" />
     <Content Include="app\css\bootstrap.min.css" />
     <Content Include="app\css\main.min.css" />
@@ -207,9 +208,14 @@
     <Content Include="app\lib\angular-cookies\angular-cookies.js" />
     <Content Include="app\lib\angular-cookies\angular-cookies.min.js" />
     <Content Include="app\lib\angular-cookies\index.js" />
+    <Content Include="app\lib\angular-localization\angular-localization.js" />
+    <Content Include="app\lib\angular-localization\angular-localization.min.js" />
     <Content Include="app\lib\angular-route\angular-route.js" />
     <Content Include="app\lib\angular-route\angular-route.min.js" />
     <Content Include="app\lib\angular-route\index.js" />
+    <Content Include="app\lib\angular-sanitize\angular-sanitize.js" />
+    <Content Include="app\lib\angular-sanitize\angular-sanitize.min.js" />
+    <Content Include="app\lib\angular-sanitize\index.js" />
     <Content Include="app\lib\angular-ui-router\release\angular-ui-router.js" />
     <Content Include="app\lib\angular-ui-router\release\angular-ui-router.min.js" />
     <Content Include="app\lib\angular-ui-router\src\common.js" />
@@ -345,23 +351,63 @@
     <Content Include="app\lib\jquery\src\var\support.js" />
     <Content Include="app\lib\jquery\src\var\toString.js" />
     <Content Include="app\lib\jquery\src\wrap.js" />
+    <Content Include="app\lib\ngSweetAlert\SweetAlert.js" />
+    <Content Include="app\lib\ngSweetAlert\SweetAlert.min.js" />
+    <Content Include="app\lib\sweetalert\.gitignore" />
+    <Content Include="app\lib\sweetalert\dev\gulpfile-wrap-template.js" />
+    <Content Include="app\lib\sweetalert\dev\ie9.css" />
+    <Content Include="app\lib\sweetalert\dev\loader-animation.css" />
+    <Content Include="app\lib\sweetalert\dev\modules\default-params.js" />
+    <Content Include="app\lib\sweetalert\dev\modules\handle-click.js" />
+    <Content Include="app\lib\sweetalert\dev\modules\handle-dom.js" />
+    <Content Include="app\lib\sweetalert\dev\modules\handle-key.js" />
+    <Content Include="app\lib\sweetalert\dev\modules\handle-swal-dom.js" />
+    <Content Include="app\lib\sweetalert\dev\modules\injected-html.js" />
+    <Content Include="app\lib\sweetalert\dev\modules\set-params.js" />
+    <Content Include="app\lib\sweetalert\dev\modules\utils.js" />
+    <Content Include="app\lib\sweetalert\dev\sweetalert.es6.js" />
+    <Content Include="app\lib\sweetalert\dist\sweetalert-dev.js" />
+    <Content Include="app\lib\sweetalert\dist\sweetalert.css" />
+    <Content Include="app\lib\sweetalert\dist\sweetalert.min.js" />
+    <Content Include="app\lib\sweetalert\example\example.css" />
+    <Content Include="app\lib\sweetalert\example\images\logo_big%402x.png" />
+    <Content Include="app\lib\sweetalert\example\images\logo_big.png" />
+    <Content Include="app\lib\sweetalert\example\images\logo_small%402x.png" />
+    <Content Include="app\lib\sweetalert\example\images\logo_small.png" />
+    <Content Include="app\lib\sweetalert\example\images\te-logo-small.svg" />
+    <Content Include="app\lib\sweetalert\example\images\thumbs-up.jpg" />
+    <Content Include="app\lib\sweetalert\example\images\vs_icon%402x.png" />
+    <Content Include="app\lib\sweetalert\example\images\vs_icon.png" />
+    <Content Include="app\lib\sweetalert\gulpfile.js" />
+    <Content Include="app\lib\sweetalert\index.html" />
+    <Content Include="app\lib\sweetalert\lib\modules\default-params.js" />
+    <Content Include="app\lib\sweetalert\lib\modules\handle-click.js" />
+    <Content Include="app\lib\sweetalert\lib\modules\handle-dom.js" />
+    <Content Include="app\lib\sweetalert\lib\modules\handle-key.js" />
+    <Content Include="app\lib\sweetalert\lib\modules\handle-swal-dom.js" />
+    <Content Include="app\lib\sweetalert\lib\modules\injected-html.js" />
+    <Content Include="app\lib\sweetalert\lib\modules\set-params.js" />
+    <Content Include="app\lib\sweetalert\lib\modules\utils.js" />
+    <Content Include="app\lib\sweetalert\lib\sweetalert.js" />
+    <Content Include="app\lib\sweetalert\sweetalert.gif" />
+    <Content Include="app\lib\sweetalert\test\index.html" />
+    <Content Include="app\lib\sweetalert\test\tests.js" />
+    <Content Include="app\lib\sweetalert\themes\facebook\facebook.css" />
+    <Content Include="app\lib\sweetalert\themes\google\google.css" />
+    <Content Include="app\lib\sweetalert\themes\twitter\twitter.css" />
     <Content Include="app\lib\themify-icons\fonts\themify.svg" />
     <Content Include="app\lib\themify-icons\ie7\ie7.css" />
     <Content Include="app\lib\themify-icons\ie7\ie7.js" />
     <Content Include="app\lib\themify-icons\themify-icons.css" />
     <Content Include="app\news\news.html" />
     <Content Include="app\news\news.js" />
+    <Content Include="app\news\_news.html" />
     <Content Include="app\payment\payment.html" />
     <Content Include="app\layout\sidebar.html" />
+    <Content Include="app\services\news.js" />
+    <Content Include="app\services\webApi.js" />
     <Content Include="index.html" />
     <Content Include="packages.config" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="package.json" />
     <Content Include=".bowerrc" />
     <Content Include="bower.json" />
@@ -531,6 +577,38 @@
     <Content Include="app\lib\themify-icons\fonts\themify.ttf" />
     <Content Include="app\lib\themify-icons\fonts\themify.woff" />
     <Content Include="app\lib\themify-icons\README.md" />
+    <Content Include="app\lib\angular-localization\.bower.json" />
+    <Content Include="app\lib\angular-localization\angular-localization.min.js.gz" />
+    <Content Include="app\lib\angular-localization\angular-localization.min.map" />
+    <Content Include="app\lib\angular-localization\bower.json" />
+    <Content Include="app\lib\angular-localization\LICENSE" />
+    <Content Include="app\lib\angular-localization\README.md" />
+    <Content Include="app\lib\angular-sanitize\.bower.json" />
+    <Content Include="app\lib\angular-sanitize\angular-sanitize.min.js.map" />
+    <Content Include="app\lib\angular-sanitize\bower.json" />
+    <Content Include="app\lib\angular-sanitize\package.json" />
+    <Content Include="app\lib\angular-sanitize\README.md" />
+    <Content Include="app\languages\en-US\navigation.lang.json" />
+    <Content Include="app\languages\ru-RU\navigation.lang.json" />
+    <Content Include="app\languages\uk-UA\navigation.lang.json" />
+    <Content Include="app\lib\sweetalert\.bower.json" />
+    <Content Include="app\lib\sweetalert\.editorconfig" />
+    <Content Include="app\lib\sweetalert\.jshintrc" />
+    <Content Include="app\lib\sweetalert\.travis.yml" />
+    <Content Include="app\lib\sweetalert\bower.json" />
+    <Content Include="app\lib\sweetalert\dev\sweetalert.scss" />
+    <Content Include="app\lib\sweetalert\example\example.scss" />
+    <Content Include="app\lib\sweetalert\LICENSE" />
+    <Content Include="app\lib\sweetalert\package.json" />
+    <Content Include="app\lib\sweetalert\README.md" />
+    <Content Include="app\lib\sweetalert\themes\facebook\facebook.scss" />
+    <Content Include="app\lib\sweetalert\themes\google\google.scss" />
+    <Content Include="app\lib\sweetalert\themes\twitter\twitter.scss" />
+    <Content Include="app\lib\ngSweetAlert\.bower.json" />
+    <Content Include="app\lib\ngSweetAlert\bower.json" />
+    <Content Include="app\lib\ngSweetAlert\LICENSE" />
+    <Content Include="app\lib\ngSweetAlert\package.json" />
+    <Content Include="app\lib\ngSweetAlert\README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -539,71 +617,18 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\css\archive-main\bootstrap.css" />
-    <Content Include="Content\css\archive-main\main.css" />
-    <Content Include="Content\css\archive-main\style.css" />
-    <Content Include="Content\css\archive-old\1200-cd-footer.css" />
-    <Content Include="Content\css\archive-old\1200-cd-header-banner.css" />
-    <Content Include="Content\css\archive-old\1200-cd-header-navigation.css" />
-    <Content Include="Content\css\archive-old\1200-cd-news.css" />
-    <Content Include="Content\css\archive-old\1200-cd-sidebar.css" />
-    <Content Include="Content\css\archive-old\480-cd-footer.css" />
-    <Content Include="Content\css\archive-old\480-cd-header-banner.css" />
-    <Content Include="Content\css\archive-old\480-cd-header-navigation.css" />
-    <Content Include="Content\css\archive-old\480-cd-news.css" />
-    <Content Include="Content\css\archive-old\480-cd-sidebar.css" />
-    <Content Include="Content\css\archive-old\768-cd-footer.css" />
-    <Content Include="Content\css\archive-old\768-cd-header-banner.css" />
-    <Content Include="Content\css\archive-old\768-cd-header-navigation.css" />
-    <Content Include="Content\css\archive-old\768-cd-news.css" />
-    <Content Include="Content\css\archive-old\768-cd-sidebar.css" />
-    <Content Include="Content\css\bootstrap.min.css" />
-    <Content Include="Content\css\main.min.css" />
-    <Content Include="Content\css\style.min.css" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Content\images\backgrounds\1000x1200.jpg" />
-    <Content Include="Content\images\backgrounds\1200x1200.jpg" />
-    <Content Include="Content\images\backgrounds\1280x1200.jpg" />
-    <Content Include="Content\images\backgrounds\1920x1080.jpg" />
-    <Content Include="Content\images\backgrounds\2560x1200.jpg" />
-    <Content Include="Content\images\backgrounds\800x1200.jpg" />
-    <Content Include="Content\images\news-image\news-image-1.jpg" />
-    <Content Include="Content\images\news-image\news-image-2.jpg" />
-    <Content Include="Content\images\news-image\news-image-3.jpg" />
-    <Content Include="Content\images\other\search-ico.jpg" />
-    <Content Include="Content\images\other\social.jpg" />
-    <Content Include="Content\images\sidebar\btn-lg.jpg" />
-    <Content Include="Content\images\sidebar\btn-md.jpg" />
-    <Content Include="Content\images\sidebar\btn-sm.jpg" />
-    <Content Include="Content\ui-bootstrap-csp.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
-    <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="General\GeneralConstants.cs" />
+    <Compile Include="General\ILanguages.cs" />
     <Compile Include="General\Languages.cs" />
+    <Compile Include="Models\News\NewsParams.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\Navigation\Navigation.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Navigation.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\Navigation\Navigation.en-us.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Navigation.en-us.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\Navigation\Navigation.uk-UA.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Navigation.uk-UA.resx</DependentUpon>
-    </Compile>
     <Compile Include="Startup\FlStartup.cs" />
-    <Compile Include="Startup\ServicesBootsraper.cs" />
     <Compile Include="Startup\UnityResolver.cs" />
     <Compile Include="Startup\WebApiConfig.cs" />
   </ItemGroup>
@@ -619,20 +644,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\Navigation\Navigation.uk-UA.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Navigation.uk-UA.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Navigation\Navigation.en-us.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Navigation.en-us.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Navigation\Navigation.resx">
-      <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Navigation.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app\lib\angular-ui-router\api\angular-ui-router.d.ts" />

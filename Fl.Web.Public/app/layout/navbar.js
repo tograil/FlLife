@@ -3,13 +3,14 @@
 
     app.controllers.controller('navbar', navbar);
 
-    navbar.$inject = ['$location', '$route', 'routes'];
+    navbar.$inject = ['$location', '$route', 'routes', 'locale'];
 
-    function navbar($location, $route, routes) {
+    function navbar($location, $route, routes, locale) {
         /* jshint validthis:true */
         var vm = this;
         vm.routes = routes;
         vm.isCurrent = isCurrent;
+        vm.changeLocale = changeLocale;
 
         activate();
 
@@ -33,5 +34,11 @@
                     return r1.config.settings.nav > r2.config.settings.nav;
                 });
         }
+
+        function changeLocale(loc) {
+            locale.setLocale(loc);
+        }
+
+        
     }
 })(flLifeApp);

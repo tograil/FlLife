@@ -8,11 +8,15 @@
         'app.directives',
 
         // Angular modules 
-        'ngRoute'
+        'ngRoute',
+        'ngLocalize',
+        'ngLocalize.Config',
+        'ngLocalize.InstalledLanguages',
 
         // Custom modules 
 
         // 3rd Party Modules
+        'oitozero.ngSweetAlert'
         
     ]);
 

@@ -82,6 +82,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
     <Compile Include="Domain\Localization\Language.cs" />
     <Compile Include="Domain\News\NewsPost.cs" />
     <Compile Include="Domain\UserManagement\Login.cs" />

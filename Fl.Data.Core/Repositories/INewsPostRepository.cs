@@ -9,5 +9,7 @@ namespace Fl.Data.Core.Repositories
         IEnumerable<NewsPost> GetAllPostsByLanguage(Language language);
 
         IEnumerable<NewsPost> GetAllPostsByLanguageShortName(string languageShortName);
+
+        IEnumerable<NewsPost> GetAllPostsByLocaleAndType(string locale, Constants.NewsType type);
     }
 }

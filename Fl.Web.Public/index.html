@@ -8,6 +8,7 @@
     <title>child-center</title>
     <!-- Google font Open Sans -->
     <link href='https://www.google.com/fonts#QuickUsePlace:quickUse/Family:Open+Sans:400,600,400italic,600italic,700,700italic,300italic,300' rel='stylesheet' type='text/css'>
+    <link href="app/lib/sweetalert/dist/sweetalert.css" rel="stylesheet" />
     <!-- Bootstrap CSS -->
     <link href="app/css/bootstrap.min.css" rel="stylesheet">
     <!-- Template CSS -->
@@ -30,14 +31,25 @@
     <script src="app/lib/bootstrap/dist/js/bootstrap.js"></script>
     <script src="app/lib/angular/angular.min.js"></script>
     <script src="app/lib/angular-route/angular-route.min.js"></script>
+    <script src="app/lib/angular-sanitize/angular-sanitize.js"></script>
+    <script src="app/lib/angular-localization/angular-localization.js"></script>
+    <script src="app/lib/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="app/lib/ngSweetAlert/SweetAlert.min.js"></script>
+    
 
 
     <!--Application-->
     <script src="app/app.js"></script>
     <script src="app/config.js"></script>
     <script src="app/config.route.js"></script>
+    <script src="app/config.localization.js"></script>
     <script src="app/layout/navbar.js"></script>
     <script src="app/layout/sidebar.js"></script>
+
+    <!--Services-->
+    <script src="app/services/news.js"></script>
+    <script src="app/services/webApi.js"></script>
+
     <!--Controllers-->
     <script src="app/news/news.js"></script>
 

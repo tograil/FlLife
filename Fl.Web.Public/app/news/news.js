@@ -1,15 +1,30 @@
-﻿(function(app) {
+﻿(function () {
     'use strict';
 
-    app.controllers.controller('news', news);
+    angular
+        .module('app')
+        .controller('News', news);
 
-    news.$inject = ['$scope'];
+    news.$inject = ['$location', 'webApi', 'locale']; 
 
-    function news($scope) {
-        $scope.title = 'news';
-
+    function news($location, webApi, locale) {
+        /* jshint validthis:true */
+        var vm = this;
+        vm.title = 'News';
+        vm.news = [];
+       
         activate();
 
-        function activate() {}
+        function activate() {
+            var url = "/api/news/list";
+            var data = {
+                locale: locale.getLocale(),
+                type: 'news'
+            };
+
+            webApi.post(url, data).then(function (dt) {
+                vm.news = dt;
+            });
+        }
     }
-})(flLifeApp);
+})();

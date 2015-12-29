@@ -1,6 +1,6 @@
 ﻿
 <div class="cd-block-style cd-sidebar-menu" ng-controller="sidebar as vm">
-        <div ng-repeat="rt in vm.routes"><a ng-class="rt.config.settings.button_class" href="#{{rt.url}}"><span>{{rt.config.settings.content}}</span></a></div>
+        <div ng-repeat="rt in vm.routes"><a ng-class="rt.config.settings.button_class" href="#{{rt.url}}"><span>{{ 'navigation.'+ rt.config.title.toString() | i18n }}</span></a></div>
 </div>
 <div class="cd-block-style cd-sidebar-banner ">
      <a href="#"><img src="http://fakeimg.pl/240x80/f5f5f5/555/?text=sidebar banner 240x80&font=lobster"></a>
